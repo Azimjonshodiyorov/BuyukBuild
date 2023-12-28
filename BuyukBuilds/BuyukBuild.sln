@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BuyukBuild.Infrastructure", "BuyukBuild.Infrastructure\BuyukBuild.Infrastructure.csproj", "{5A4C8C24-3853-49BE-9073-ED5215ACC342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuyukBuild.WebCore", "BuyukBuild.WebCore\BuyukBuild.WebCore.csproj", "{629C4F41-1DB7-4A37-911B-6074A852F6C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +27,10 @@ Global
 		{5A4C8C24-3853-49BE-9073-ED5215ACC342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A4C8C24-3853-49BE-9073-ED5215ACC342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A4C8C24-3853-49BE-9073-ED5215ACC342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{629C4F41-1DB7-4A37-911B-6074A852F6C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{629C4F41-1DB7-4A37-911B-6074A852F6C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{629C4F41-1DB7-4A37-911B-6074A852F6C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{629C4F41-1DB7-4A37-911B-6074A852F6C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,5 +38,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{B96248F8-DE71-4846-B712-8E7879E1A6C4} = {E81823AE-D9E9-419F-B344-8309F2DB5F9C}
 		{5A4C8C24-3853-49BE-9073-ED5215ACC342} = {6B542F33-B39A-412A-AC7A-E0BD38B2053F}
+		{629C4F41-1DB7-4A37-911B-6074A852F6C0} = {E81823AE-D9E9-419F-B344-8309F2DB5F9C}
 	EndGlobalSection
 EndGlobal
