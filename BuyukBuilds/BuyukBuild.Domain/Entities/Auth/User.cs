@@ -1,4 +1,5 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BuyukBuild.Domain.Entities.Auth;
@@ -14,6 +15,8 @@ public class User : AuditableBaseEntity<long>
     public DateTimeOffset DateOfBrith { get; set; }
     [Column("phone_number")] 
     public string PhoneNumber { get; set; }
+    [Column("user_role")]
+    public UserRole UserRole { get; set; }
     [Column("email")] 
     public string Email { get; set; }
     [Column("is_bloked")] 
