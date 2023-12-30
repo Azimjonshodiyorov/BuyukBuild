@@ -1,4 +1,8 @@
-﻿using BuyukBuild.Domain.Entities.Common;
+﻿using BuyukBuild.Domain.Entities.Cards;
+using BuyukBuild.Domain.Entities.Carts;
+using BuyukBuild.Domain.Entities.Comments;
+using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Orders;
 using BuyukBuild.Domain.Enum;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -24,4 +28,9 @@ public class User : AuditableBaseEntity<long>
     public string CardId { get; set; }
     [Column("is_bloked")] 
     public bool IsBlocked { get; set; } = false;
+
+    public virtual ICollection<Cart> Carts { get; set; }
+    public virtual ICollection<Order> Orders { get; set; }
+    public virtual ICollection<Comment> Comments { get; set; }
+    public virtual Card Card { get; set; }
 }

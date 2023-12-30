@@ -1,4 +1,7 @@
-﻿using BuyukBuild.Domain.Entities.Common;
+﻿using BuyukBuild.Domain.Entities.Address;
+using BuyukBuild.Domain.Entities.Cards;
+using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +24,10 @@ namespace BuyukBuild.Domain.Entities.Company
         public long AddresId { get; set; }
         [Column("card_id")]
         public string CardId { get; set; }
+
+        public virtual Card Card { get; set; }
+        public virtual AddressData  Address { get; set; }
+
+        public virtual Product      Product { get; set; }
     }
 }

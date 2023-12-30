@@ -1,4 +1,6 @@
-﻿using BuyukBuild.Domain.Entities.Common;
+﻿using BuyukBuild.Domain.Entities.Auth;
+using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Company;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,5 +19,10 @@ namespace BuyukBuild.Domain.Entities.Cards
         public DateTime ExpireData { get; set; }
         [Column("amount")]
         public decimal Amount { get; set; }
+        [Column("user_id")]
+        public long UserId { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual CompanyData CompanyData { get; set; }
     }
 }

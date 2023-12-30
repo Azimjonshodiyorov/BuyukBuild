@@ -1,4 +1,11 @@
-﻿using BuyukBuild.Domain.Entities.Common;
+﻿using BuyukBuild.Domain.Entities.Carts;
+using BuyukBuild.Domain.Entities.Categories;
+using BuyukBuild.Domain.Entities.Comments;
+using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Company;
+using BuyukBuild.Domain.Entities.Discounts;
+using BuyukBuild.Domain.Entities.OrderLists;
+using BuyukBuild.Domain.Entities.StaticFiles;
 using BuyukBuild.Domain.Enum;
 using System;
 using System.Collections.Generic;
@@ -29,6 +36,20 @@ namespace BuyukBuild.Domain.Entities.Products
         public long CategoryId { get; set; }
         [Column("discount_id")]
         public long DiscountId { get; set; }
+        [Column("static_file_id")]
+        public long StaticFilesId { get; set; }
+
+        public virtual Cart Cart { get; set; }
+
+        public virtual ICollection<Comment> Comments { get; set; }
+        public virtual ICollection<OrderList>  OrderLists { get; set; }
+        public virtual Discount Discount { get; set; }
+
+        public virtual CompanyData CompanyData { get; set; }
+
+        public virtual Category Category { get; set; }
+
+        public virtual StaticFile StaticFile { get; set; }
 
     }
 }

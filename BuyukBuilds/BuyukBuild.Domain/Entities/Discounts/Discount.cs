@@ -1,4 +1,5 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,6 +18,8 @@ namespace BuyukBuild.Domain.Entities.Discounts
         public string Description { get; set; }
         [Column("procent")]
         public double Procent { get; set; }
+
+        public virtual  Product  Product { get; set; }
 
     }
 }

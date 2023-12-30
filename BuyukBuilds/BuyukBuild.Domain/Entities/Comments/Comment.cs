@@ -1,4 +1,6 @@
-﻿using BuyukBuild.Domain.Entities.Common;
+﻿using BuyukBuild.Domain.Entities.Auth;
+using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,6 +19,9 @@ namespace BuyukBuild.Domain.Entities.Comments
         public long ProductId { get; set; }
         [Column("text")]
         public string Text { get; set; }
+
+        public virtual User User { get; set; }
+        public virtual Product Product { get; set; }
 
     }
 }

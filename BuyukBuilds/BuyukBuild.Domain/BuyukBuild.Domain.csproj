@@ -12,7 +12,7 @@
 
     <ItemGroup>
       <Folder Include="DataTransferObjects\" />
-      <Folder Include="Payment\" />
+      <Folder Include="Entities\Payment\" />
     </ItemGroup>
 
 </Project>

@@ -1,4 +1,5 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Company;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -17,5 +18,7 @@ namespace BuyukBuild.Domain.Entities.Address
         public string Country { get; set; }
         [Column("strength")]
         public string Strength { get; set; }
+
+        public virtual CompanyData CompanyData { get; set; }
     }
 }
