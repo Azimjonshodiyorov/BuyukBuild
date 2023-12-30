@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BuyukBuild.Domain.Entities.Auth;
 
-[Table("user" , Schema ="Auth")]
+[Table("user" , Schema = "buyukbuild")]
 public class User : AuditableBaseEntity<long>
 {
     [Column("first_name")] 
@@ -19,6 +19,9 @@ public class User : AuditableBaseEntity<long>
     public UserRole UserRole { get; set; }
     [Column("email")] 
     public string Email { get; set; }
+
+    [Column("card_id")]
+    public string CardId { get; set; }
     [Column("is_bloked")] 
     public bool IsBlocked { get; set; } = false;
 }
