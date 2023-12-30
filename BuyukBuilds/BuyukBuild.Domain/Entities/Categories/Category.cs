@@ -1,4 +1,5 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,5 +16,7 @@ namespace BuyukBuild.Domain.Entities.Categories
         public string Name { get; set; }
         [Column("parent_id")]
         public long ParentId { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

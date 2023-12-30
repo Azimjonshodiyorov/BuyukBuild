@@ -1,4 +1,5 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -21,5 +22,7 @@ namespace BuyukBuild.Domain.Entities.StaticFiles
         public string Type { get; set; }
         [Column("file_extension")]
         public string FileExtension { get; set; }
+
+        public virtual ICollection<Product> Products { get; set; }
     }
 }

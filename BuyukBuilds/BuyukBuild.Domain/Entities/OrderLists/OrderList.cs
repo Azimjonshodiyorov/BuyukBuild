@@ -1,4 +1,6 @@
 ﻿using BuyukBuild.Domain.Entities.Common;
+using BuyukBuild.Domain.Entities.Orders;
+using BuyukBuild.Domain.Entities.Products;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -15,5 +17,8 @@ namespace BuyukBuild.Domain.Entities.OrderLists
         public long OrderId { get; set; }
         [Column("product_id")]
         public long ProductId { get; set; }
+
+        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }
