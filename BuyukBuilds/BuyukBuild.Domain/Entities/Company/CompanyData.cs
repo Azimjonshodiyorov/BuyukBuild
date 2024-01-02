@@ -23,7 +23,7 @@ namespace BuyukBuild.Domain.Entities.Company
         [Column("address_id")]
         public long AddresId { get; set; }
         [Column("card_id")]
-        public string CardId { get; set; }
+        public long CardId { get; set; }
 
         public virtual Card Card { get; set; }
         public virtual AddressData  Address { get; set; }
