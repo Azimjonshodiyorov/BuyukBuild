@@ -25,7 +25,7 @@ public class User : AuditableBaseEntity<long>
     public string Email { get; set; }
 
     [Column("card_id")]
-    public string CardId { get; set; }
+    public long CardId { get; set; }
     [Column("is_bloked")] 
     public bool IsBlocked { get; set; } = false;
 
