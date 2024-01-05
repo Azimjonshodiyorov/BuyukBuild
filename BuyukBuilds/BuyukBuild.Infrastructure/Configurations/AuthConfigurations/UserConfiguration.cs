@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BuyukBuild.Infrastructure.Configurations
+namespace BuyukBuild.Infrastructure.Configurations.AuthConfigurations
 {
     public class UserConfiguration : IEntityTypeConfiguration<User>
     {
@@ -25,6 +25,18 @@ namespace BuyukBuild.Infrastructure.Configurations
                 .HasOne(x => x.Card)
                 .WithOne(x => x.User)
                 .HasForeignKey<User>(x => x.CardId);
+
+            builder
+            .HasMany(x => x.AuthMethods)
+            .WithOne(x => x.User)
+            .IsRequired()
+            .HasForeignKey(x => x.UserId);
+
+            builder
+                .HasOne(x => x.Structure)
+                .WithMany(x => x.Users)
+                .HasForeignKey(x => x.StructureId)
+                .IsRequired();
 
         }
     }
