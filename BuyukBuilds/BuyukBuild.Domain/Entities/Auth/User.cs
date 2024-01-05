@@ -1,4 +1,5 @@
-﻿using BuyukBuild.Domain.Entities.Cards;
+﻿using BuyukBuild.Domain.Entities.Auth.AuthMethods;
+using BuyukBuild.Domain.Entities.Cards;
 using BuyukBuild.Domain.Entities.Carts;
 using BuyukBuild.Domain.Entities.Comments;
 using BuyukBuild.Domain.Entities.Common;
@@ -29,8 +30,12 @@ public class User : AuditableBaseEntity<long>
     [Column("is_bloked")] 
     public bool IsBlocked { get; set; } = false;
 
+    public virtual Structure Structure { get; set; }
+    [Column("structure_id")] public long StructureId { get; set; }
+
     public virtual ICollection<Cart> Carts { get; set; }
     public virtual ICollection<Order> Orders { get; set; }
     public virtual ICollection<Comment> Comments { get; set; }
     public virtual Card Card { get; set; }
+    public virtual ICollection<AuthMethodBase> AuthMethods { get; set; }
 }
