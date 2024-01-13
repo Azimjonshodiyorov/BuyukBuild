@@ -1,4 +1,7 @@
 
+using BuyukBuild.Domain.Extansions;
+using BuyukBuild.Infrastructure.DataContext;
+
 namespace BuyukBuild.WebApi
 {
     public class Program
@@ -7,16 +10,11 @@ namespace BuyukBuild.WebApi
         {
             var builder = WebApplication.CreateBuilder(args);
 
-            // Add services to the container.
-
             builder.Services.AddControllers();
-            // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-
             var app = builder.Build();
 
-            // Configure the HTTP request pipeline.
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();

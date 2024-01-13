@@ -14,5 +14,6 @@ namespace BuyukBuild.Domain.Exceptions
         {
             this.StatusCode = 400;
         }
+
     }
 }
