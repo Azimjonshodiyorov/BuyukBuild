@@ -15,8 +15,4 @@
     <ProjectReference Include="..\BuyukBuild.Infrastructure\BuyukBuild.Infrastructure.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Services\" />
-  </ItemGroup>
-
 </Project>

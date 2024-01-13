@@ -19,7 +19,7 @@ namespace BuyukBuild.Domain.Entities.Employees
         [Column("type")]
         public string Type { get; set; }
 
-        [Column("address_id")]
+        [Column("address_id") , ForeignKey(nameof(AddressData))]
         public long AddressId { get; set; }
     }
 }
