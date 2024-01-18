@@ -102,6 +102,14 @@ namespace BuyukBuild.Infrastructure.Repositories
             return this.GetAllAsQueryable().GetEnumerator();
         }
 
+        public async Task<T> RemoveAsync(T entity)
+        {
+           var result =  this.context.Set<T>().Remove(entity);
+
+            await this.context.SaveChangesAsync();
+            return result.Entity;
+        }
+
         public async Task<T> UpdateAsync(T entity)
         {
             var result =  this.context.Set<T>().Update(entity);
