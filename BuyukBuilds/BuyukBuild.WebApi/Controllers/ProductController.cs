@@ -1,5 +1,6 @@
 ﻿using BuyukBuild.Domain.DataTransferObjects.Products;
 using BuyukBuild.Service.Services.ProductService.Interface;
+using BuyukBuild.WebCore.Models;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using System.Formats.Tar;
@@ -19,34 +20,34 @@ namespace BuyukBuild.WebApi.Controllers
         }
 
         [HttpPost("add")]
-        public async Task<IActionResult> AddProduct([FromBody] CreatedProductDto productDto)
+        public async Task<ResponseModel> AddProduct([FromBody] CreatedProductDto productDto)
         {
-            var result = await this.productService.CreateProductAsync(productDto);
-            return Ok(result);
+            return ResponseModel.ResultFromContent( await this.productService.CreateProductAsync(productDto));
+           
         }
         [HttpGet("search:{name:string}")]
-        public async Task<IActionResult> GetProductByName([FromQuery] string name)
+        public async Task<ResponseModel> GetProductByName([FromQuery] string name)
         {
-            var result = await this.productService.GetProductByNameAsync(name);
-            return Ok(result);
+             return ResponseModel.ResultFromContent( await this.productService.GetProductByNameAsync(name));
+           
         }
         [HttpGet("id{id:int}")]
-        public async Task<IActionResult> GetProductByIdAsync([FromQuery] long id)
+        public async Task<ResponseModel> GetProductByIdAsync([FromQuery] long id)
         {
-            var result = await this.productService.GetProductByIdAsync(id);
-            return Ok(result);
+            return ResponseModel.ResultFromContent(await this.productService.GetProductByIdAsync(id));
+           
         }
         [HttpDelete("{id:int}")]
-        public async Task<IActionResult> DeleteProductByIdAsync([FromQuery] long id)
+        public async Task<ResponseModel> DeleteProductByIdAsync([FromQuery] long id)
         {
-            var result = await this.productService.DeleteProductAsync(id);
-            return Ok(result);
+            return ResponseModel.ResultFromContent( await this.productService.DeleteProductAsync(id));
+         
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateProductAsync([FromBody] UpdateProductDto updateProductDto)
+        public async Task<ResponseModel> UpdateProductAsync([FromBody] UpdateProductDto updateProductDto)
         {
-            var result = await this.productService.UpdateProductAsync(updateProductDto);
-            return Ok(result);  
+            return ResponseModel.ResultFromContent(await this.productService.UpdateProductAsync(updateProductDto));
+            
         }
     }
 }

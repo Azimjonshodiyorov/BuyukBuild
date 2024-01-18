@@ -14,6 +14,7 @@ namespace BuyukBuild.Infrastructure.Repositories.Interfaces
         Task<T> AddAsync(T entity);
         Task<T> UpdateAsync(T entity);
         Task<T> DeleteAsync(TId id);
+        Task<T> RemoveAsync(T entity);
         Task AddRangeAsync(params T[] values);
         Task UpdateRangeAsync(params T[] values);
         Task DeleteRangeAsync(params T[] values);
